@@ -37,7 +37,7 @@ from lms.lib.xblock.mixin import LmsBlockMixin
 
 ################################### FEATURES ###################################
 # The display name of the platform to be used in templates/emails/etc.
-PLATFORM_NAME = "edX"
+PLATFORM_NAME = "MuddX"
 CC_MERCHANT_NAME = PLATFORM_NAME
 
 COURSEWARE_ENABLED = True
@@ -148,7 +148,7 @@ FEATURES = {
     'SEGMENT_IO_LMS': False,
 
     # Provide a UI to allow users to submit feedback from the LMS (left-hand help modal)
-    'ENABLE_FEEDBACK_SUBMISSION': False,
+    'ENABLE_FEEDBACK_SUBMISSION': True,
 
     # Turn on a page that lets staff enter Python code to be run in the
     # sandbox, for testing whether it's enabled properly.
@@ -204,7 +204,7 @@ FEATURES = {
 
     # Disable instructor dash buttons for downloading course data
     # when enrollment exceeds this number
-    'MAX_ENROLLMENT_INSTR_BUTTONS': 200,
+    'MAX_ENROLLMENT_INSTR_BUTTONS': 2000,
 
     # Grade calculation started from the new instructor dashboard will write
     # grades CSV files to S3 and give links for downloads.
@@ -530,12 +530,12 @@ ROOT_URLCONF = 'lms.urls'
 
 # Platform Email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'registration@example.com'
-DEFAULT_FEEDBACK_EMAIL = 'feedback@example.com'
-SERVER_EMAIL = 'devops@example.com'
-TECH_SUPPORT_EMAIL = 'technical@example.com'
-CONTACT_EMAIL = 'info@example.com'
-BUGS_EMAIL = 'bugs@example.com'
+DEFAULT_FROM_EMAIL = 'registration@muddx.com'
+DEFAULT_FEEDBACK_EMAIL = 'feedback@muddx.com'
+SERVER_EMAIL = 'devops@muddx.com'
+TECH_SUPPORT_EMAIL = 'technical@muddx.com'
+CONTACT_EMAIL = 'info@muddx.com'
+BUGS_EMAIL = 'bugs@muddx.com'
 ADMINS = ()
 MANAGERS = ADMINS
 
@@ -552,7 +552,7 @@ STATICFILES_DIRS = [
 FAVICON_PATH = 'images/favicon.ico'
 
 # Locale/Internationalization
-TIME_ZONE = 'America/New_York'  # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
+TIME_ZONE = 'America/California'  # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 LANGUAGE_CODE = 'en'  # http://www.i18nguy.com/unicode/language-identifiers.html
 
 # Sourced from http://www.localeplanet.com/icu/ and wikipedia
@@ -673,7 +673,7 @@ WIKI_LINK_LIVE_LOOKUPS = False
 WIKI_LINK_DEFAULT_LEVEL = 2
 
 ##### Feedback submission mechanism #####
-FEEDBACK_SUBMISSION_EMAIL = None
+FEEDBACK_SUBMISSION_EMAIL = hmcmooc@gmail.com
 
 ##### Zendesk #####
 ZENDESK_URL = None
@@ -684,7 +684,7 @@ ZENDESK_API_KEY = None
 EMBARGO_SITE_REDIRECT_URL = None
 
 ##### shoppingcart Payment #####
-PAYMENT_SUPPORT_EMAIL = 'payment@example.com'
+PAYMENT_SUPPORT_EMAIL = 'payment@muddx.com'
 ##### Using cybersource by default #####
 CC_PROCESSOR = {
     'CyberSource': {
@@ -706,7 +706,7 @@ PAYMENT_REPORT_GENERATOR_GROUP = 'shoppingcart_report_access'
 #By setting up the default settings with an incorrect user name and password,
 # will get an error when attempting to connect
 OPEN_ENDED_GRADING_INTERFACE = {
-    'url': 'http://example.com/peer_grading',
+    'url': 'http://muddx.com/peer_grading',
     'username': 'incorrect_user',
     'password': 'incorrect_pass',
     'staff_grading': 'staff_grading',
@@ -1092,7 +1092,7 @@ CELERYD_HIJACK_ROOT_LOGGER = False
 
 # Suffix used to construct 'from' email address for bulk emails.
 # A course-specific identifier is prepended.
-BULK_EMAIL_DEFAULT_FROM_EMAIL = 'no-reply@example.com'
+BULK_EMAIL_DEFAULT_FROM_EMAIL = 'no-reply@muddx.com'
 
 # Parameters for breaking down course enrollment into subtasks.
 BULK_EMAIL_EMAILS_PER_TASK = 100
@@ -1278,7 +1278,7 @@ MKTG_URL_LINK_MAP = {
 
 ################# Student Verification #################
 VERIFY_STUDENT = {
-    "DAYS_GOOD_FOR": 365,  # How many days is a verficiation good for?
+    "DAYS_GOOD_FOR": 365,  # How many days is a verification good for?
 }
 
 ### This enables the Metrics tab for the Instructor dashboard ###########
@@ -1359,7 +1359,7 @@ MAX_FAILED_LOGIN_ATTEMPTS_LOCKOUT_PERIOD_SECS = 15 * 60
 
 
 ##### LMS DEADLINE DISPLAY TIME_ZONE #######
-TIME_ZONE_DISPLAYED_FOR_DEADLINES = 'UTC'
+TIME_ZONE_DISPLAYED_FOR_DEADLINES = 'PST'
 
 
 # Source:
